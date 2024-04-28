@@ -1,0 +1,96 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* VYMAZAT */
+  border: 1px solid goldenrod;
+}
+
+:root {
+  --padding-sections: 40px;
+  --header-height: 70px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #15304c;
+  height: var(--header-height);
+}
+
+.logo {
+  flex-grow: 1;
+}
+
+.logo img {
+  width: 200px;
+  margin-left: 20px;
+}
+
+nav {
+  margin-right: 30px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-icon {
+  display: none;
+  margin-right: 30px;
+}
+
+/* MAIN */
+
+.welcome {
+  background-image: url(./img/background.webp);
+  min-height: calc(100vh - var(--header-height));
+  background-size: cover;
+  background-position: center;
+}
+
+/* PHONES - 600px or less*/
+@media (max-width: 600px) {
+  header {
+    position: relative;
+  }
+
+  nav {
+    position: absolute;
+    top: var(--header-height);
+    background-color: #15304c;
+    width: 100%;
+    display: none;
+    /* testing alternative way of hiding the "nav" */
+    /* visibility: hidden; */
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 23px;
+    color: white;
+  }
+
+  nav li {
+    display: block;
+    text-align: center;
+    margin: 10px 0px;
+  }
+}
+
+@media (min-width: 600px) {
+  #navID {
+    /* visibility: visible !important; */
+    display: block;
+  }
+}
