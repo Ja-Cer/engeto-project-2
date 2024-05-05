@@ -2,26 +2,19 @@ const menuIcon = document.querySelector(".menu-icon");
 const menuList = document.querySelector("nav");
 const hamburgerIcon = document.querySelector(".fa-solid");
 
+// Funkce
+const iconSwap = (iconAdd, iconRemove, location) => {
+  location.classList.add(iconAdd);
+  location.classList.remove(iconRemove);
+};
+//
+
 menuIcon.addEventListener("click", () => {
   if (hamburgerIcon.classList[1] === "fa-bars") {
-    hamburgerIcon.classList.add("fa-square-xmark");
-    hamburgerIcon.classList.remove("fa-bars");
-    menuList.style.display = "block";
+    iconSwap("fa-square-xmark", "fa-bars", hamburgerIcon);
+    menuList.classList.remove("hidden"); //neupravujeme přes ".style.display", protože by Js mělo větší specificity než CSS.
   } else {
-    hamburgerIcon.classList.add("fa-bars");
-    hamburgerIcon.classList.remove("fa-square-xmark");
-    menuList.style.display = "none";
+    iconSwap("fa-bars", "fa-square-xmark", hamburgerIcon);
+    menuList.classList.add("hidden");
   }
 });
-
-// menuIcon.addEventListener("click", () => {
-//   if (hamburgerIcon.classList[1] === "fa-bars") {
-//     hamburgerIcon.classList.add("fa-square-xmark");
-//     hamburgerIcon.classList.remove("fa-bars");
-//     menuList.style.visibility = "visible";
-//   } else {
-//     hamburgerIcon.classList.add("fa-bars");
-//     hamburgerIcon.classList.remove("fa-square-xmark");
-//     menuList.style.visibility = "hidden";
-//   }
-// });

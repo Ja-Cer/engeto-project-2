@@ -1,11 +1,12 @@
 /* General */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  /* VYMAZAT */
-  border: 1px solid goldenrod;
+  font-family: Roboto;
 }
 
 :root {
@@ -49,6 +50,7 @@ nav a {
   display: none;
   margin-right: 30px;
 }
+/*----------*/
 
 /* MAIN */
 
@@ -59,7 +61,10 @@ nav a {
   background-position: center;
 }
 
-/* PHONES - 600px or less*/
+/*----------*/
+
+/* Viewport 600px or less*/
+
 @media (max-width: 600px) {
   header {
     position: relative;
@@ -70,9 +75,15 @@ nav a {
     top: var(--header-height);
     background-color: #15304c;
     width: 100%;
+  }
+
+  /*visibilita pro <nav>, definovaná separátně přes class.
+  Class poté odebíráme/přidáváme přes js., ale Js. tím nezíská mít vyšší specifičnost než styly v CSS
+  (k čemuž by došlo při přímé úpravě stylu "display / visibility" přes Js)
+  
+  */
+  .hidden {
     display: none;
-    /* testing alternative way of hiding the "nav" */
-    /* visibility: hidden; */
   }
 
   .menu-icon {
@@ -85,12 +96,5 @@ nav a {
     display: block;
     text-align: center;
     margin: 10px 0px;
-  }
-}
-
-@media (min-width: 600px) {
-  #navID {
-    /* visibility: visible !important; */
-    display: block;
   }
 }
