@@ -2,7 +2,7 @@ const menuIcon = document.querySelector(".menu-icon");
 const menuList = document.querySelector("nav");
 const hamburgerIcon = document.querySelector(".fa-solid");
 
-// Funkce
+// Funkce pro výměnu Icon
 const iconSwap = (iconAdd, iconRemove, location) => {
   location.classList.add(iconAdd);
   location.classList.remove(iconRemove);

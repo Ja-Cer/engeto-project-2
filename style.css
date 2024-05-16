@@ -1,4 +1,4 @@
-/* General */
+/* General set-up */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
 
@@ -28,7 +28,7 @@ header {
 }
 
 .logo img {
-  width: 200px;
+  max-width: 200px;
   margin-left: 20px;
 }
 
@@ -68,6 +68,11 @@ nav a {
 @media (max-width: 600px) {
   header {
     position: relative;
+  }
+
+  .logo img {
+    width: 80%;
+    min-width: 100px;
   }
 
   nav {
